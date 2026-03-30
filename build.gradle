@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version "${spring_boot_version}"
+	id 'com.google.cloud.tools.jib' version '3.5.3'
 }
 
 group = 'me.mzalietin.mdbproject'
@@ -24,4 +25,23 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jib {
+	from {
+		image = "gcr.io/distroless/java17-debian13"
+	}
+	to {
+		image = "mzalietin/mdb-gateway:${version}"
+	}
+	container {
+		user = "nonroot"
+		ports = ["8080"]
+		jvmFlags = [
+				"-XX:+UseContainerSupport"
+		]
+		environment = [
+				"SPRING_PROFILES_ACTIVE": "docker"
+		]
+	}
 }

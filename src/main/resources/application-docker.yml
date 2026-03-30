@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: movie-api
+              uri: http://mdb-aggregator:8081
+              predicates:
+                - Path=/api/movies, /api/movies/**
+                - Method=POST,PUT,DELETE
+            - id: movie-review-api
+              uri: http://mdb-aggregator:8082
+              predicates:
+                - Path=/api/movie-reviews, /api/movie-reviews/**
+                - Method=POST,PUT,DELETE
+            - id: user-api
+              uri: http://mdb-aggregator:8083
+              predicates:
+                - Path=/api/users, /api/users/**
+                - Method=POST,PUT,DELETE
+            - id: query-api
+              uri: http://mdb-aggregator:8084
+              predicates:
+                - Path=/api/**
+                - Method=GET

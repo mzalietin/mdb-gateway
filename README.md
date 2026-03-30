@@ -43,14 +43,22 @@ Customer requirements:
 
 ## Build
 
+### Default build & test
+
 Prerequisites: Java 17
 
-`gradlew clean build`
+`./gradlew clean build`
 
-## Run
+### Build Docker image
+
+Prerequisites: Docker environment
+
+`./gradlew clean build jibDockerBuild`
+
+### Run
 
 `java -jar build/libs/mdb-gateway-0.0.1.jar`
 
-## Debug
+### Debug
 
 `java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -jar build/libs/mdb-gateway-0.0.1.jar`
