@@ -1,10 +1,10 @@
 # MovieDB backend
 
-## Component description
+## Component
 
-MovieDB - Gateway Service
+### MovieDB - Gateway Service
 
-## Task description
+## Task
 
 Application that stores info about movies, users and their reviews.
 
