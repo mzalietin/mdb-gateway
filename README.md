@@ -1,10 +1,10 @@
 # MovieDB backend
 
-## Component
+# Component
 
-### MovieDB - Gateway Service
+## MovieDB - Gateway Service
 
-## Task
+# Task
 
 Application that stores info about movies, users and their reviews.
 
@@ -95,9 +95,9 @@ Environment: `mdb-aggregator` running on `localhost`
 + Java 17
 + Spring Cloud Gateway WebFlux
 
-## Build
+# Build
 
-### Default build & test
+## Default build & test
 
 Environment: Java 17
 
@@ -109,10 +109,10 @@ Environment: Docker
 
 `./gradlew clean build jibDockerBuild`
 
-### Run
+## Run
 
 `java -jar build/libs/mdb-gateway-0.0.1.jar`
 
-### Debug
+## Debug
 
 `java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -jar build/libs/mdb-gateway-0.0.1.jar`
