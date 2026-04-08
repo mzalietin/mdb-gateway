@@ -4,6 +4,11 @@
 
 ## MovieDB - Gateway Service
 
+### Related components
+
++ https://github.com/mzalietin/mdb-aggregator
++ https://github.com/mzalietin/mdb-demo
+
 # Task
 
 Application that stores info about movies, users and their reviews.
